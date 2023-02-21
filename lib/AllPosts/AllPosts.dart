@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../Account/AccountPage.dart';
+import '../Cart/CartPage.dart';
 import '../HomePages/Home.dart';
+import '../MyCloset/MyClosetPage.dart';
+import '../Post/PostPage.dart';
 import '../SliderPages/SliderPageOne.dart';
 import '../bottom_icons_icons.dart';
+import 'ProductDetails/ProductDetails.dart';
 
 class SeeAllPosts extends StatefulWidget {
   const SeeAllPosts({Key? key}) : super(key: key);
@@ -14,11 +19,11 @@ class SeeAllPosts extends StatefulWidget {
 
 class _SeeAllPostsState extends State<SeeAllPosts> {
   List pages = [
-    HomePage(),
-    SeeAllPosts(),
-    SliderPageOne(),
-    SeeAllPosts(),
-    SliderPageOne(),
+    const HomePage(),
+    const CartPage(),
+    const PostPage(),
+    const MyClosetPage(),
+    const AccountPage (),
 
   ];
   int currentIndex = 0;
@@ -53,17 +58,18 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 3.0,
                 ),
               ],
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(20),
                   bottomLeft: Radius.circular(20)
               ),
@@ -132,7 +138,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
 
 
                 ],
-                currentIndex: currentIndex,
+                currentIndex: 0,
                 selectedIconTheme: IconThemeData(color: Colors.red,size: 25) ,
                 unselectedIconTheme: IconThemeData(color: Colors.grey,size: 20),
                 selectedItemColor: Colors.red,
@@ -176,55 +182,62 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                 child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(width:
-                    MediaQuery.of(context).size.width /
-                        2.5,
-                      height: 170,
-                      decoration: BoxDecoration(
-                          image:  DecorationImage(
-                              image: AssetImage(
-                                "assets/" + dress[index],
+                    InkWell(
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                          return ProductDetails();
+                        }));
+                      },
+                      child: Container(width:
+                      MediaQuery.of(context).size.width /
+                          2.5,
+                        height: 170,
+                        decoration: BoxDecoration(
+                            image:  DecorationImage(
+                                image: AssetImage(
+                                  "assets/" + dress[index],
+                                ),
+                                fit: BoxFit.cover),
+                            borderRadius:
+                            BorderRadius.circular(10)),
+                        child: Column(
+                          crossAxisAlignment:
+                          CrossAxisAlignment.end,
+                          mainAxisAlignment:
+                          MainAxisAlignment.end,
+                          children: [
+                            Transform.translate(
+                              offset: const Offset(-10, 10),
+                              child: InkWell(
+                                onTap: (){
+                                  setState(() {
+                                    like = !like;
+                                  });
+                                },
+                                child: Container(
+                                    height: 30,
+                                    width: 30,
+                                    decoration:
+                                    const BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey,
+                                              blurRadius: 5.0)
+                                        ],
+                                        color: Colors.white,
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(100))),
+                                    child: like == true
+                                        ? Center(   child: SvgPicture.asset('assets/Heart.svg'))
+                                        : Center(
+                                        child: SvgPicture.asset(
+                                            'assets/EHeart.svg'))),
                               ),
-                              fit: BoxFit.cover),
-                          borderRadius:
-                          BorderRadius.circular(10)),
-                      child: Column(
-                        crossAxisAlignment:
-                        CrossAxisAlignment.end,
-                        mainAxisAlignment:
-                        MainAxisAlignment.end,
-                        children: [
-                          Transform.translate(
-                            offset: const Offset(-10, 10),
-                            child: InkWell(
-                              onTap: (){
-                                setState(() {
-                                  like = !like;
-                                });
-                              },
-                              child: Container(
-                                  height: 30,
-                                  width: 30,
-                                  decoration:
-                                  const BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.grey,
-                                            blurRadius: 5.0)
-                                      ],
-                                      color: Colors.white,
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(100))),
-                                  child: like == true
-                                      ? Center(   child: SvgPicture.asset('assets/Heart.svg'))
-                                      : Center(
-                                      child: SvgPicture.asset(
-                                          'assets/EHeart.svg'))),
                             ),
-                          ),
-                        ],
-                      ),
+                          ],
+                        ),
 
+                      ),
                     ),
                      const SizedBox(
                         height: 10,

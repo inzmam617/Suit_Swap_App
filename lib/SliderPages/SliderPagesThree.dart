@@ -26,7 +26,12 @@ class SliderPagesThree extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return const HomePage();
+                          }));
+
+                        },
                         child: const Text(
                           "Skip",
                           style: TextStyle(color: Colors.black),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../HomePages/Home.dart';
+import 'SliderPagesThree.dart';
 
 class SliderPageTwo extends StatelessWidget {
   const SliderPageTwo({Key? key}) : super(key: key);
@@ -24,7 +26,12 @@ class SliderPageTwo extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return const HomePage();
+                          }));
+
+                        },
                         child: const Text(
                           "Skip",
                           style: TextStyle(color: Colors.black),
@@ -77,6 +84,10 @@ class SliderPageTwo extends StatelessWidget {
 
                     InkWell(
                         onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return const SliderPagesThree();
+                          }));
+
 
                         },
                         child: SvgPicture.asset("assets/redbutton.svg",height: MediaQuery.of(context).size.height / 6))

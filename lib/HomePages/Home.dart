@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../Account/AccountPage.dart';
 import '../AllPosts/AllPosts.dart';
+import '../Cart/CartPage.dart';
 import '../FilterPage/FilterPage.dart';
+import '../MyCloset/MyClosetPage.dart';
+import '../Post/PostPage.dart';
 import '../SliderPages/SliderPageOne.dart';
 import '../bottom_icons_icons.dart';
 
@@ -15,11 +19,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List pages = [
-    HomePage(),
-    SeeAllPosts(),
-    SliderPageOne(),
-    SeeAllPosts(),
-    SliderPageOne(),
+    const HomePage(),
+    const CartPage(),
+    const PostPage(),
+    const MyClosetPage(),
+    const AccountPage(),
+
 
   ];
   int currentIndex = 0;
@@ -59,21 +64,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       extendBody: true,
-
-
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 3.0,
                 ),
               ],
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20)
               ),
@@ -118,7 +120,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   BottomNavigationBarItem(
                     label: "My Closet" ,
-
                     icon: Container(
                       //padding: const EdgeInsets.all(7),
                         child: const Icon(
@@ -137,12 +138,8 @@ class _HomePageState extends State<HomePage> {
                         )),
                     //label: '',
                   ),
-
-
-
-
                 ],
-                currentIndex: currentIndex,
+                currentIndex: 0,
                 selectedIconTheme: IconThemeData(color: Colors.red,size: 25) ,
                 unselectedIconTheme: IconThemeData(color: Colors.grey,size: 20),
                 selectedItemColor: Colors.red,
@@ -163,7 +160,7 @@ class _HomePageState extends State<HomePage> {
             Align(
               alignment: Alignment.topLeft,
               child: Transform.translate(
-                  offset: Offset(-55, -90),
+                  offset: const Offset(-55, -90),
                   child: SvgPicture.asset("assets/BigCircle.svg")),
             ),
             Padding(
@@ -285,7 +282,7 @@ class _HomePageState extends State<HomePage> {
                                       Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (BuildContext context) {
-                                        return SeeAllPosts();
+                                        return const SeeAllPosts();
                                       }));
                                     },
                                     child: const Text(
@@ -382,8 +379,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20, top: 20),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 20, top: 20),
                             child: Text(
                               "Products",
                               style:

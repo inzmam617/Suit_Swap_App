@@ -58,15 +58,15 @@ class _SliderPageOneState extends State<SliderPageOne> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         "Lorem ipsum dolor \n sit amet consectur",
                         style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
-                      const Text(
+                      Text(
                         "Lorem ipsum dolor sit amet, \n consectetur adipiscing elit.",
                         style: TextStyle(color: Colors.black),
                       ),
@@ -87,7 +87,9 @@ class _SliderPageOneState extends State<SliderPageOne> {
 
                   InkWell(
                     onTap: (){
-
+                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                        return const HomePage();
+                      }));
                     },
                       child: SvgPicture.asset("assets/redbutton.svg",height: MediaQuery.of(context).size.height / 6))
                 ],
