@@ -6,7 +6,6 @@ import '../Cart/CartPage.dart';
 import '../HomePages/Home.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
-import '../SliderPages/SliderPageOne.dart';
 import '../bottom_icons_icons.dart';
 import 'ProductDetails/ProductDetails.dart';
 
@@ -139,8 +138,8 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
 
                 ],
                 currentIndex: 0,
-                selectedIconTheme: IconThemeData(color: Colors.red,size: 25) ,
-                unselectedIconTheme: IconThemeData(color: Colors.grey,size: 20),
+                selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
+                unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
                 selectedItemColor: Colors.red,
                 unselectedItemColor: Colors.grey,
                 showSelectedLabels: true,
@@ -154,6 +153,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
           ),
         ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,      
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
@@ -185,7 +185,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                     InkWell(
                       onTap: (){
                         Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                          return ProductDetails();
+                          return const ProductDetails();
                         }));
                       },
                       child: Container(width:
@@ -253,19 +253,19 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     SizedBox(
                       height: 30,
                       width: 100,
                       child: ElevatedButton(
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
+                                  const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(Radius.circular(50))
                                   )
                               ),
                               backgroundColor:
-                              MaterialStateProperty.all(Color(0xffD10909))),
+                              MaterialStateProperty.all(const Color(0xffD10909))),
                           onPressed: () {},
                           child: const Text(
                             "Add to Card",

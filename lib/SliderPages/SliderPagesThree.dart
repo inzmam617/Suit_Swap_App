@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../HomePages/Home.dart';
+import '../SignIn/SignIn.dart';
 
 class SliderPagesThree extends StatelessWidget {
   const SliderPagesThree({Key? key}) : super(key: key);
@@ -22,7 +23,11 @@ class SliderPagesThree extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SvgPicture.asset("assets/backbutton.svg",height: MediaQuery.of(context).size.height / 6 ,),
+                  InkWell(
+                    onTap: (){
+
+                    },
+                      child: SvgPicture.asset("assets/backbutton.svg",height: MediaQuery.of(context).size.height / 6 ,)),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
@@ -85,7 +90,7 @@ class SliderPagesThree extends StatelessWidget {
                     InkWell(
                         onTap: (){
                           Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                            return const HomePage();
+                            return const SignIn();
                           }));
 
                         },

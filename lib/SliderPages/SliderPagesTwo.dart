@@ -55,15 +55,15 @@ class SliderPageTwo extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           "Lorem ipsum dolor \n sit amet consectur",
                           style: TextStyle(color: Colors.black, fontSize: 20),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const Text(
+                        Text(
                           "Lorem ipsum dolor sit amet, \n consectetur adipiscing elit.",
                           style: TextStyle(color: Colors.black),
                         ),

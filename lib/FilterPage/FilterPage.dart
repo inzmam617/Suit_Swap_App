@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart ';
 
 class FilterPage extends StatefulWidget {
-  FilterPage({Key? key}) : super(key: key);
+  const FilterPage({Key? key}) : super(key: key);
 
   @override
   State<FilterPage> createState() => _FilterPageState();
@@ -70,8 +70,8 @@ class _FilterPageState extends State<FilterPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("\$" + (selectRange.start.toInt()).toString()),
-                        Text("\$" + selectRange.end.toInt().toString())
+                        Text("\$${selectRange.start.toInt()}"),
+                        Text("\$${selectRange.end.toInt()}")
                       ],
                     ),
                   ),
@@ -358,12 +358,12 @@ class _FilterPageState extends State<FilterPage> {
                           child: ElevatedButton(
                               style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
+                                const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(50))
                                 )
                                 ),
                                   backgroundColor:
-                                      MaterialStateProperty.all(Color(0xffD10909))),
+                                      MaterialStateProperty.all(const Color(0xffD10909))),
                               onPressed: () {},
                               child: const Text(
                                 "Apply",
@@ -377,11 +377,11 @@ class _FilterPageState extends State<FilterPage> {
                           child: ElevatedButton(
                             
                               style: ButtonStyle(
-                                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                                shape: MaterialStateProperty.all(const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(50))
                                 )),
-                                  side: MaterialStateProperty.all(BorderSide(
-                                    color: const Color(0xffD10909)
+                                  side: MaterialStateProperty.all(const BorderSide(
+                                    color: Color(0xffD10909)
                                   )),
                                   backgroundColor:
                                   MaterialStateProperty.all(const Color(0xffFFFFFF))

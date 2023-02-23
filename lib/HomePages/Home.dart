@@ -7,7 +7,6 @@ import '../Cart/CartPage.dart';
 import '../FilterPage/FilterPage.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
-import '../SliderPages/SliderPageOne.dart';
 import '../bottom_icons_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -140,8 +139,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
                 currentIndex: 0,
-                selectedIconTheme: IconThemeData(color: Colors.red,size: 25) ,
-                unselectedIconTheme: IconThemeData(color: Colors.grey,size: 20),
+                selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
+                unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
                 selectedItemColor: Colors.red,
                 unselectedItemColor: Colors.grey,
                 showSelectedLabels: true,
@@ -241,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) {
-                            return FilterPage();
+                            return const FilterPage();
                           }));
                         },
                         child: Container(

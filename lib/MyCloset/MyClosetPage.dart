@@ -123,8 +123,8 @@ class _MyClosetPageState extends State<MyClosetPage> {
 
               ],
               currentIndex:3,
-              selectedIconTheme: IconThemeData(color: Colors.red,size: 25) ,
-              unselectedIconTheme: IconThemeData(color: Colors.grey,size: 20),
+              selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
+              unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
               selectedItemColor: Colors.red,
               unselectedItemColor: Colors.grey,
               showSelectedLabels: true,
@@ -137,7 +137,7 @@ class _MyClosetPageState extends State<MyClosetPage> {
           ),
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text("MY CLOSET PAGE"),
       ),
     );
