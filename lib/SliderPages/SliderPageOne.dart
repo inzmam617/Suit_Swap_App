@@ -18,7 +18,7 @@ class _SliderPageOneState extends State<SliderPageOne> {
         Stack(
           children: [
             Image.asset(
-              "assets/red_women.png",
+              "assets/sareeOne.jpg",
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 1.5,
               fit: BoxFit.cover,

@@ -6,6 +6,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../Message&Notification/TabBar.dart';
+
 class ProductDetails extends StatefulWidget {
   const ProductDetails({Key? key}) : super(key: key);
 
@@ -20,7 +22,16 @@ class _ProductDetailsState extends State<ProductDetails> {
       height: double.infinity,
       width: double.infinity,
       child: Image.asset(
-        "assets/details.png",
+        "assets/eight.jpg",
+        fit: BoxFit.cover,
+
+      ),
+    ),
+    SizedBox(
+      height: double.infinity,
+      width: double.infinity,
+      child: Image.asset(
+        "assets/eight.jpg",
         fit: BoxFit.cover,
       ),
     ),
@@ -28,15 +39,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       height: double.infinity,
       width: double.infinity,
       child: Image.asset(
-        "assets/details.png",
-        fit: BoxFit.cover,
-      ),
-    ),
-    SizedBox(
-      height: double.infinity,
-      width: double.infinity,
-      child: Image.asset(
-        "assets/details.png",
+        "assets/eight.jpg",
         fit: BoxFit.cover,
       ),
     ),
@@ -78,7 +81,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                       )),
                       backgroundColor: MaterialStateProperty.all(Color(0xff7F0101))
                   ),
-                  onPressed: (){}, child: Text("Buy Now"))),
+                  onPressed: (){
+
+                  }, child: Text("Buy Now"))),
         ),
       ),
       body: SingleChildScrollView(
@@ -664,7 +669,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                               )),
                               backgroundColor: MaterialStateProperty.all(Color(0xff7F0101))
                             ),
-                              onPressed: (){}, child: Text("Message")))
+                              onPressed: (){
+                                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                                  return const TabBarPage();
+                                }));
+                              }, child: Text("Message")))
                       
                     ],
                   )

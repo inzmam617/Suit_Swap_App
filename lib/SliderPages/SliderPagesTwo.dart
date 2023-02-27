@@ -14,7 +14,7 @@ class SliderPageTwo extends StatelessWidget {
           Stack(
             children: [
               Image.asset(
-                "assets/n.png",
+                "assets/sareeTwo.jpg",
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 1.5,
                 fit: BoxFit.cover,

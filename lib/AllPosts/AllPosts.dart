@@ -40,18 +40,14 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
   }
   bool like = false;
   List dress = [
-    "dressTen.png",
-    "dressEleven.png",
-    "dressThirteen.png",
-    "dressOne.png",
-    "dressTwo.png",
-    "dressThree.png",
-    "dressFour.png",
-    "dressFive.png",
-    "dressSix.png",
-    "dressSeven.png",
-    "dressEight.png",
-    "dressNine.png",
+    "one.jpg",
+    "two.jpg",
+    "three.jpg",
+    "four.jpg",
+    "five.jpg",
+    "six.jpg",
+    "seven.jpg",
+    "eight.jpg",
 
   ];
   @override
@@ -166,116 +162,118 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
         backgroundColor: Colors.white,
 
       ),
-      body: SingleChildScrollView(
-        child:  GridView.builder(
-            physics: const ScrollPhysics(),
-            shrinkWrap: true,
-            gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio:
-                ((MediaQuery.of(context).size.width /2) /270),
-                crossAxisCount: 2),
-            itemCount: dress.length,
-            itemBuilder: (BuildContext ctx, index) {
-              return Padding(
-                padding: const EdgeInsets.all(10),
-                child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InkWell(
-                      onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                          return const ProductDetails();
-                        }));
-                      },
-                      child: Container(width:
-                      MediaQuery.of(context).size.width /
-                          2.5,
-                        height: 170,
-                        decoration: BoxDecoration(
-                            image:  DecorationImage(
-                                image: AssetImage(
-                                  "assets/" + dress[index],
+      body: Center(
+        child: SingleChildScrollView(
+          child:  GridView.builder(
+              physics: const ScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio:
+                  ((MediaQuery.of(context).size.width /2) /270),
+                  crossAxisCount: 2),
+              itemCount: dress.length,
+              itemBuilder: (BuildContext ctx, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(10),
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return const ProductDetails();
+                          }));
+                        },
+                        child: Container(width:
+                        MediaQuery.of(context).size.width /
+                            2.5,
+                          height: 170,
+                          decoration: BoxDecoration(
+                              image:  DecorationImage(
+                                  image: AssetImage(
+                                    "assets/" + dress[index],
+                                  ),
+                                  fit: BoxFit.cover),
+                              borderRadius:
+                              BorderRadius.circular(10)),
+                          child: Column(
+                            crossAxisAlignment:
+                            CrossAxisAlignment.end,
+                            mainAxisAlignment:
+                            MainAxisAlignment.end,
+                            children: [
+                              Transform.translate(
+                                offset: const Offset(-10, 10),
+                                child: InkWell(
+                                  onTap: (){
+                                    setState(() {
+                                      like = !like;
+                                    });
+                                  },
+                                  child: Container(
+                                      height: 30,
+                                      width: 30,
+                                      decoration:
+                                      const BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Colors.grey,
+                                                blurRadius: 5.0)
+                                          ],
+                                          color: Colors.white,
+                                          borderRadius:
+                                          BorderRadius.all(Radius.circular(100))),
+                                      child: like == true
+                                          ? Center(   child: SvgPicture.asset('assets/Heart.svg'))
+                                          : Center(
+                                          child: SvgPicture.asset(
+                                              'assets/EHeart.svg'))),
                                 ),
-                                fit: BoxFit.cover),
-                            borderRadius:
-                            BorderRadius.circular(10)),
-                        child: Column(
-                          crossAxisAlignment:
-                          CrossAxisAlignment.end,
-                          mainAxisAlignment:
-                          MainAxisAlignment.end,
-                          children: [
-                            Transform.translate(
-                              offset: const Offset(-10, 10),
-                              child: InkWell(
-                                onTap: (){
-                                  setState(() {
-                                    like = !like;
-                                  });
-                                },
-                                child: Container(
-                                    height: 30,
-                                    width: 30,
-                                    decoration:
-                                    const BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: Colors.grey,
-                                              blurRadius: 5.0)
-                                        ],
-                                        color: Colors.white,
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(100))),
-                                    child: like == true
-                                        ? Center(   child: SvgPicture.asset('assets/Heart.svg'))
-                                        : Center(
-                                        child: SvgPicture.asset(
-                                            'assets/EHeart.svg'))),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
+
+                        ),
+                      ),
+                       const SizedBox(
+                          height: 10,
                         ),
 
+                      const Text(
+                        "Cotton Shirt",
+                        style: TextStyle(color: Colors.grey),
                       ),
-                    ),
-                     const SizedBox(
-                        height: 10,
+                      const Text(
+                        '\$50',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
-
-                    const Text(
-                      "Cotton Shirt",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    const Text(
-                      '\$50',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 5,),
-                    SizedBox(
-                      height: 30,
-                      width: 100,
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all(
-                                  const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(50))
-                                  )
-                              ),
-                              backgroundColor:
-                              MaterialStateProperty.all(const Color(0xffD10909))),
-                          onPressed: () {},
-                          child: const Text(
-                            "Add to Card",
-                            style: TextStyle(color: Colors.white,fontSize: 12),
-                          )),
-                    ),
-                  ],
-                ),
-              );
-            })
+                      const SizedBox(height: 5,),
+                      SizedBox(
+                        height: 30,
+                        width: 100,
+                        child: ElevatedButton(
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(50))
+                                    )
+                                ),
+                                backgroundColor:
+                                MaterialStateProperty.all(const Color(0xffD10909))),
+                            onPressed: () {},
+                            child: const Text(
+                              "Add to Card",
+                              style: TextStyle(color: Colors.white,fontSize: 12),
+                            )),
+                      ),
+                    ],
+                  ),
+                );
+              })
+        ),
       )
 
     );

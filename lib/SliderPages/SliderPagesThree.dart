@@ -15,7 +15,7 @@ class SliderPagesThree extends StatelessWidget {
         Stack(
             children: [
               Image.asset(
-                "assets/greywomen.png",
+                "assets/sareeThree.jpg",
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 1.5,
                 fit: BoxFit.cover,

@@ -13,7 +13,7 @@ class SignIn extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              "assets/dark-haired-woman-with-red-lipstick-smiles-leans-stand-with-clothes-holds-package-pink-background.png",
+              "assets/saree.jpg",
               height: MediaQuery.of(context).size.height / 3,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,

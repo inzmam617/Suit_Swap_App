@@ -40,20 +40,25 @@ class _HomePageState extends State<HomePage> {
 
   }
   List dress = [
-    "dressOne.png",
-    "dressTwo.png",
-    "dressThree.png",
-    "dressFour.png",
-    "dressFive.png",
-    "dressSix.png",
-    "dressSeven.png",
-    "dressEight.png",
+    "one.jpg",
+    "two.jpg",
+    "three.jpg",
+    "four.jpg",
+    "five.jpg",
+    "six.jpg",
+    "seven.jpg",
+    "eight.jpg",
     "dressNine.png"
   ];
   List dresstwo = [
-    "dressFour.png",
-    "dressFive.png",
-    "dressSix.png",
+    "one.jpg",
+    "two.jpg",
+    "three.jpg",
+    "four.jpg",
+    "five.jpg",
+    "six.jpg",
+    "seven.jpg",
+    "eight.jpg",
     "dressSeven.png",
     "dressEight.png",
     "dressNine.png"
