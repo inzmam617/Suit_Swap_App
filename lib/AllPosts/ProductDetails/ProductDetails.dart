@@ -22,7 +22,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       height: double.infinity,
       width: double.infinity,
       child: Image.asset(
-        "assets/eight.jpg",
+        "assets/eight.png",
         fit: BoxFit.cover,
 
       ),
@@ -31,7 +31,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       height: double.infinity,
       width: double.infinity,
       child: Image.asset(
-        "assets/eight.jpg",
+        "assets/eight.png",
         fit: BoxFit.cover,
       ),
     ),
@@ -39,7 +39,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       height: double.infinity,
       width: double.infinity,
       child: Image.asset(
-        "assets/eight.jpg",
+        "assets/eight.png",
         fit: BoxFit.cover,
       ),
     ),
@@ -79,7 +79,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(50))
                       )),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff7F0101))
+                      backgroundColor: MaterialStateProperty.all(Color(0xffFD8A00))
                   ),
                   onPressed: (){
 
@@ -116,7 +116,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             paintStyle: PaintingStyle.stroke,
                             strokeWidth: 1.5,
                             dotColor: Colors.white.withOpacity(0.7),
-                            activeDotColor: Colors.indigo),
+                            activeDotColor: Colors.black),
                       ),
                     ),
                   ),
@@ -588,6 +588,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     style: TextStyle(color: Colors.black54, fontSize: 12),
                   )
                 ],
+
               ),
             ),
             const SizedBox(
@@ -667,7 +668,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(50))
                               )),
-                              backgroundColor: MaterialStateProperty.all(Color(0xff7F0101))
+                              backgroundColor: MaterialStateProperty.all(Color(0xffFD8A00))
                             ),
                               onPressed: (){
                                 Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {

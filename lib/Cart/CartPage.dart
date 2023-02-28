@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../Account/AccountPage.dart';
 import '../HomePages/Home.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
+import '../ProfilePage/ProfilePage.dart';
 import '../bottom_icons_icons.dart';
 
 class CartPage extends StatefulWidget {
@@ -19,7 +18,7 @@ class _CartPageState extends State<CartPage> {
     const CartPage(),
     const PostPage(),
     const MyClosetPage(),
-    const AccountPage(),
+    const ProfilePage(),
 
 
   ];

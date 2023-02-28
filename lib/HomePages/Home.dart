@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../Account/AccountPage.dart';
 import '../AllPosts/AllPosts.dart';
 import '../Cart/CartPage.dart';
 import '../FilterPage/FilterPage.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
+import '../ProfilePage/ProfilePage.dart';
 import '../bottom_icons_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     const CartPage(),
     const PostPage(),
     const MyClosetPage(),
-    const AccountPage(),
+    const ProfilePage(),
 
 
   ];
@@ -144,9 +143,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
                 currentIndex: 0,
-                selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
+                selectedIconTheme: const IconThemeData(color: Color(0xffFD8A00),size: 25) ,
                 unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
-                selectedItemColor: Colors.red,
+                selectedItemColor: Color(0xffFD8A00),
                 unselectedItemColor: Colors.grey,
                 showSelectedLabels: true,
                 showUnselectedLabels: true,
@@ -158,7 +157,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        backgroundColor: const Color(0xffD10909),
+        backgroundColor: const Color(0xffFD8A00),
         body: Stack(
           children: [
             Align(
@@ -255,8 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   BorderRadius.all(Radius.circular(15))),
                           width: 45,
                           height: 45,
-                          child: Center(
-                            child: SvgPicture.asset("assets/settings.svg"),
+                          child: Center( child: SvgPicture.asset("assets/settings.svg"),
                           ),
                         ),
                       ),

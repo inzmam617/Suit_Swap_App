@@ -31,7 +31,7 @@ class _TabBarPageState extends State<TabBarPage> with TickerProviderStateMixin {
       child: Scaffold(
 
         appBar: AppBar(
-          backgroundColor: const Color(0xff7F0101),
+          backgroundColor: const Color(0xffFD8A00),
           bottom:  TabBar(
             indicatorColor: Colors.white,
             dividerColor: Colors.white,

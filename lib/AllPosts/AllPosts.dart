@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../Account/AccountPage.dart';
 import '../Cart/CartPage.dart';
 import '../HomePages/Home.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
+import '../ProfilePage/ProfilePage.dart';
 import '../bottom_icons_icons.dart';
 import 'ProductDetails/ProductDetails.dart';
 
@@ -22,7 +21,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
     const CartPage(),
     const PostPage(),
     const MyClosetPage(),
-    const AccountPage (),
+    const ProfilePage (),
 
   ];
   int currentIndex = 0;
@@ -134,9 +133,9 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
 
                 ],
                 currentIndex: 0,
-                selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
+                selectedIconTheme: const IconThemeData(color: Color(0xffFD8A00),size: 25) ,
                 unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
-                selectedItemColor: Colors.red,
+                selectedItemColor: Color(0xffFD8A00),
                 unselectedItemColor: Colors.grey,
                 showSelectedLabels: true,
                 showUnselectedLabels: true,
@@ -163,14 +162,15 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
 
       ),
       body: Center(
-        child: SingleChildScrollView(
-          child:  GridView.builder(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: GridView.builder(
               physics: const ScrollPhysics(),
               shrinkWrap: true,
               gridDelegate:
               SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio:
-                  ((MediaQuery.of(context).size.width /2) /270),
+                  ((MediaQuery.of(context).size.width /2) /280),
                   crossAxisCount: 2),
               itemCount: dress.length,
               itemBuilder: (BuildContext ctx, index) {
@@ -262,7 +262,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                                     )
                                 ),
                                 backgroundColor:
-                                MaterialStateProperty.all(const Color(0xffD10909))),
+                                MaterialStateProperty.all(const Color(0xffFD8A00))),
                             onPressed: () {},
                             child: const Text(
                               "Add to Card",
@@ -272,7 +272,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                     ],
                   ),
                 );
-              })
+              }),
         ),
       )
 

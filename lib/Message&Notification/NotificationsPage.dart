@@ -40,7 +40,7 @@ Widget NotificationPage(){
                                 height: 75,
                                 width: 60,
                                 decoration: const BoxDecoration(
-                                    color:Color(0xff7F0101),
+                                    color:Color(0xffFD8A00),
                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                 ),
                                 child: Center(
@@ -53,7 +53,7 @@ Widget NotificationPage(){
                               padding: const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: const [
                                   Text("Notification 1",style: TextStyle(color: Colors.black),),
                                   Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.",style: TextStyle(color: Colors.black,fontSize: 10),),
                                 ],
