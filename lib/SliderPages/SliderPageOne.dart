@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suit_swap_app/HomePages/Home.dart';
+import 'package:suit_swap_app/SignIn/SignIn.dart';
 
 class SliderPageOne extends StatefulWidget {
   const SliderPageOne({Key? key}) : super(key: key);
@@ -103,7 +104,7 @@ class _SliderPageOneState extends State<SliderPageOne> {
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) {
-                              return const HomePage();
+                              return const SignIn();
                             }));
                           },
                           child: SvgPicture.asset("assets/redbutton.svg",

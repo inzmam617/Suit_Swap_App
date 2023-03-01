@@ -107,7 +107,7 @@ class SliderPagesThree extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) {
-                                      return const HomePage();
+                                      return const SignIn();
                                     }));
                               },
                               child: SvgPicture.asset("assets/redbutton.svg",

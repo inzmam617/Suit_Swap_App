@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../HomePages/Home.dart';
+import '../SignIn/SignIn.dart';
 import 'SliderPagesThree.dart';
 
 class SliderPageTwo extends StatelessWidget {
@@ -106,7 +107,7 @@ class SliderPageTwo extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) {
-                                      return const HomePage();
+                                      return const SignIn();
                                     }));
                               },
                               child: SvgPicture.asset("assets/redbutton.svg",

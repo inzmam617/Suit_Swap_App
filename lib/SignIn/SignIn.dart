@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../HomePages/Home.dart';
+import '../SignUp/signup.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -12,8 +13,8 @@ class SignIn extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              "assets/saree.jpg",
+            SvgPicture.asset(
+              "assets/saree.svg",
               height: MediaQuery.of(context).size.height / 3,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
@@ -87,7 +88,11 @@ class SignIn extends StatelessWidget {
             SizedBox(
               width: 150,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                      return HomePage();
+                    }));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xffD10909),
                       shape: const RoundedRectangleBorder(
@@ -137,7 +142,7 @@ class SignIn extends StatelessWidget {
                       fontSize: 12,
                       color: Color(0xffA90000)),
                 ),
-                onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) { return const HomePage(); }));},
+                onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) { return const signup(); }));},
                 )
               ],
             )
