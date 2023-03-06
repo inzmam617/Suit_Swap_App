@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:suit_swap_app/Edit%20Profile/EditProfile.dart';
+import 'package:suit_swap_app/My%20Wishlist/mywishlist.dart';
 import 'dart:math' as math;
+import '../Ask us/askus.dart';
 import '../Cart/CartPage.dart';
+import '../Help/help.dart';
 import '../HomePages/Home.dart';
 import '../MyCloset/MyClosetPage.dart';
 import '../Post/PostPage.dart';
@@ -157,30 +161,35 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Center(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return EditProfile();
+                }));
+              },
               child: Text(
                 "Edit Profile",
                 style: TextStyle(color: Color(0xffFD8A00)),
               ),
             ),
           ),
-          listtile("View Profile", "Profile"),
-          listtile("My WishList", "YellowHeart"),
-          listtile("Manage Payments", "Wallet"),
-          listtile("Got Questions? Ask us Here!", "More Square"),
-          listtile("Help", "Info Square"),
-          listtile("Logout", "Logout")
+          listtile("View Profile", "Profile",help()),
+          listtile("My WishList", "YellowHeart",mywishlist()),
+          listtile("Manage Payments", "Wallet",help()),
+          listtile("Got Questions? Ask us Here!", "More Square",askus()),
+          listtile("Help", "Info Square",help()),
+          listtile("Logout", "Logout",help())
         ],
       ),
     );
   }
 
-  Widget listtile(text, image) {
+  Widget listtile(text, image, page) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: InkWell(
-        onTap: (){
-          print("object" +text);
+        onTap: () {
+          print("object" + text);
         },
         child: Container(
           height: 35,

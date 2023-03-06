@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:suit_swap_app/Edit%20Profile/EditProfile.dart';
 
 class signup extends StatelessWidget {
   const signup({Key? key}) : super(key: key);
@@ -13,18 +14,19 @@ class signup extends StatelessWidget {
             children: [
               Center(
                   child: Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: SvgPicture.asset("assets/image/Group 1823.svg"),
-              )),
+                    padding: const EdgeInsets.only(top: 30),
+                    child: SvgPicture.asset("assets/Fashion blogging-amico.svg"),
+                  )),
               Padding(
-                padding: const EdgeInsets.only(top: 260),
+                padding: const EdgeInsets.only(top: 280),
                 child: Align(
                     alignment: Alignment.topRight,
-                    child: SvgPicture.asset("assets/image/design colors.svg")),
+                    child:
+                    SvgPicture.asset("assets/design colors.svg")),
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 300),
+                  padding: const EdgeInsets.only(top: 350),
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
@@ -46,7 +48,7 @@ class signup extends StatelessWidget {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
                   prefixIcon: SvgPicture.asset(
-                    "assets/image/Iconly-Bulk-Profile.svg",
+                    "assets/Iconly-Bulk-Profile.svg",
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: "Name",
@@ -65,7 +67,7 @@ class signup extends StatelessWidget {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
                   prefixIcon: SvgPicture.asset(
-                    "assets/image/Iconly-Bulk-Message.svg",
+                    "assets/Iconly-Bulk-Message.svg",
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: "Email",
@@ -84,12 +86,12 @@ class signup extends StatelessWidget {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
                   prefixIcon: SvgPicture.asset(
-                    "assets/image/Iconly-Bulk-Unlock.svg",
+                    "assets/Iconly-Bulk-Unlock.svg",
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: "Password",
                   hintStyle: TextStyle(color: Color(0xffC0BDBD)),
-                  focusedBorder: const UnderlineInputBorder(
+                  focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.green))),
             ),
           ),
@@ -103,7 +105,7 @@ class signup extends StatelessWidget {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
                   prefixIcon: SvgPicture.asset(
-                    "assets/image/Iconly-Bulk-Lock.svg",
+                    "assets/Iconly-Bulk-Lock.svg",
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: "Confirm Password",
@@ -134,24 +136,25 @@ class signup extends StatelessWidget {
             style: TextStyle(fontSize: 12, fontFamily: "SF Pro Text"),
           ),
           SizedBox(height: 30),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset("assets/Group 1788.svg",
-                  height: 50, width: 50),
-              const SizedBox(width: 10),
-              SvgPicture.asset("assets/facebook.svg",
-                  height: 50, width: 50),
-              const SizedBox(width: 10),
-              SvgPicture.asset("assets/apple.svg",
-                  height: 50, width: 50),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 120),
+            child: Row(
+              children: [
+                SvgPicture.asset("assets/Group 1788.svg",
+                    height: 60, width: 60),
+                SizedBox(width: 20),
+                SvgPicture.asset("assets/facebook.svg",
+                    height: 60, width: 60),
+                SizedBox(width: 20),
+                SvgPicture.asset("assets/apple.svg",
+                    height: 60, width: 60),
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 60),
+              SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -168,10 +171,10 @@ class signup extends StatelessWidget {
                       color: Color(0xffFD8A00)),
                 ),
                 onPressed: () {
-                  // Navigator.of(context).push(
-                  //     MaterialPageRoute(builder: (BuildContext context) {
-                  //   return editprofile();
-                  // }));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return EditProfile();
+                  }));
                 },
               )
             ],
