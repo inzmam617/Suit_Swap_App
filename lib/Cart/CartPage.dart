@@ -128,9 +128,11 @@ class _CartPageState extends State<CartPage> {
 
               ],
               currentIndex: 1,
-              selectedIconTheme: const IconThemeData(color: Colors.red,size: 25) ,
-              unselectedIconTheme: const IconThemeData(color: Colors.grey,size: 20),
-              selectedItemColor: Colors.red,
+              selectedIconTheme:
+              const IconThemeData(color: Color(0xffFD8A00), size: 25),
+              unselectedIconTheme:
+              const IconThemeData(color: Colors.grey, size: 20),
+              selectedItemColor: Color(0xffFD8A00),
               unselectedItemColor: Colors.grey,
               showSelectedLabels: true,
               showUnselectedLabels: true,
