@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:suit_swap_app/Edit%20Profile/EditProfile.dart';
 
+import '../SignIn/SignIn.dart';
+
 class signup extends StatelessWidget {
   const signup({Key? key}) : super(key: key);
 
@@ -136,25 +138,21 @@ class signup extends StatelessWidget {
             style: TextStyle(fontSize: 12, fontFamily: "SF Pro Text"),
           ),
           SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.only(left: 120),
-            child: Row(
-              children: [
-                SvgPicture.asset("assets/Group 1788.svg",
-                    height: 60, width: 60),
-                SizedBox(width: 20),
-                SvgPicture.asset("assets/facebook.svg",
-                    height: 60, width: 60),
-                SizedBox(width: 20),
-                SvgPicture.asset("assets/apple.svg",
-                    height: 60, width: 60),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset("assets/Group 1788.svg",
+                  height: 50, width: 50),
+              const SizedBox(width: 10),
+              SvgPicture.asset("assets/facebook.svg",
+                  height: 50, width: 50),
+              const SizedBox(width: 10),
+              SvgPicture.asset("assets/apple.svg", height: 50, width: 50),
+            ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -173,7 +171,7 @@ class signup extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (BuildContext context) {
-                    return EditProfile();
+                    return SignIn();
                   }));
                 },
               )

@@ -41,6 +41,12 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: Text("Cart",style: TextStyle(color: Colors.black),),
+      ),
       extendBody: true,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -136,9 +142,64 @@ class _CartPageState extends State<CartPage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text("MY CART PAGE"),
-      ),
+      body: ListView.builder(itemBuilder: (BuildContext context, int index) {
+        return Padding(padding: EdgeInsets.all(10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 3.5
+              )
+            ]
+          ),
+          height: 120,
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  height: 100,
+                  width: 120,
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                        image: AssetImage("assets/istockphoto-1189191538-170667a.jpg"))
+                  ),
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("Scoth Premium" ,style: TextStyle(color: Colors.black,fontSize: 17),),
+                  Text("\$1600" ,style: TextStyle(color: Colors.black,fontSize: 13),),
+                  Row(
+                    children: [
+
+
+                    ],
+                  )
+                ],
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    onPressed: (){},
+                    icon: Icon(Icons.close,color: Colors.black,),
+                  ),
+                ),
+              )
+            ]
+
+          ),
+        ),);
+      },)
     );
   }
 }

@@ -8,7 +8,9 @@ import '../Cart/CartPage.dart';
 import '../Help/help.dart';
 import '../HomePages/Home.dart';
 import '../MyCloset/MyClosetPage.dart';
+import '../Payment Details/carddetail.dart';
 import '../Post/PostPage.dart';
+import '../SignIn/SignIn.dart';
 import '../bottom_icons_icons.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -175,10 +177,10 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           listtile("View Profile", "Profile",help()),
           listtile("My WishList", "YellowHeart",mywishlist()),
-          listtile("Manage Payments", "Wallet",help()),
+          listtile("Manage Payments", "Wallet",carddetail()),
           listtile("Got Questions? Ask us Here!", "More Square",askus()),
           listtile("Help", "Info Square",help()),
-          listtile("Logout", "Logout",help())
+          listtile("Logout", "Logout",SignIn())
         ],
       ),
     );
@@ -189,7 +191,9 @@ class _ProfilePageState extends State<ProfilePage> {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: InkWell(
         onTap: () {
-          print("object" + text);
+         Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+           return page;
+         }));
         },
         child: Container(
           height: 35,
